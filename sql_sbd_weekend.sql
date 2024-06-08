@@ -6,3 +6,6 @@ create TABLE barang(
 	barangDesc VARCHAR(200),
 	PRIMARY KEY ( barangID )
 );
+
+
+create table test
