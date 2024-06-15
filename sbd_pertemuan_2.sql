@@ -38,10 +38,11 @@ where subtotal < 500000
 select * from penjualan p 
 
 
-select barangID, sum(quantity), sum(subtotal) 
+select barangID, sum(quantity) as totalQty , sum(subtotal) 
 from penjualan p
 group by barangID 
-having sum(quantity) < 7
+having totalQty < 7
+order by totalQty
 
 
 select * from penjualan p 
@@ -52,6 +53,9 @@ select barangID, sum(quantity) from penjualan p
 select * from barang
 order by barangHarga desc
 limit 3
+
+select barangID from penjualan p 
+group by barangID 
 
 
 
