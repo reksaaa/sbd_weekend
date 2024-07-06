@@ -61,6 +61,78 @@ select * from `user` u
 
 select * from log_user lu 
 
+create or replace procedure InsertUser(
+	in p_firstname VARCHAR(100),
+	in p_lastname VARCHAR(100),
+	in p_idmovie CHAR(3),
+	in p_idteater int
+)
+begin 
+	insert into `user` (firstName, lastName, idMovie, idTeater)
+	values(p_firstname, p_lastname, p_idmovie, p_idteater);
+end;
+
+
+CREATE OR REPLACE PROCEDURE UpdateUser(
+    IN p_firstname VARCHAR(100),
+    IN p_lastname VARCHAR(100),
+    IN p_iduser INT
+)
+BEGIN 
+    UPDATE `user` 
+    SET firstName = p_firstname, lastName = p_lastname
+    WHERE idUser = p_iduser;
+END;
+
+
+CREATE OR REPLACE PROCEDURE DeleteUser(
+    IN p_iduser INT
+)
+BEGIN 
+    DELETE FROM `user` 
+    WHERE idUser = p_iduser;
+END;
+
+
+
+call UpdateUser ("Diogo", "Costa", 17)
+
+call DeleteUser (17)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
